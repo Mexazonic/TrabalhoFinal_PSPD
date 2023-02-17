@@ -47,7 +47,7 @@ gcc -c lib_julia.c
 mpicc lib_julia.o fractalmpi_io.c -o fractalmpi_io -lm
 mpirun -host cm1,cm2,cm3,cm4 -n 4 ./fractalmpi_io 1000
 ```
-![](https://imgur.com/EsXAKVN.png)
+![](https://imgur.com/JSCxPPe.png)
 Exemplo:
 ![](https://imgur.com/jVTFuuj.png)
 

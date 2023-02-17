@@ -1,5 +1,6 @@
 ## Trabalho Final PSPD
 Nome: Bruno Henrique Sousa Duarte
+
 Matrícula: 170138551
 
 
@@ -19,10 +20,11 @@ Compilação e execução para mais de uma máquina (Chococcino)
 ```shell
 
 gcc -c lib_julia.c
-mpicc lib_julia.o fractalmpi_io.c -o fractalmpi_io -lm
-mpirun -host cm1,cm2,cm3,cm4 -n 8 ./frac 1000
-
+mpicc lib_julia.o fractalmpiserial.c -o fractalmpiserial -lm
+mpirun -host cm1,cm2,cm3,cm4,gpu1,gpu2,gpu3 -n 7 ./fractalmpiserial 1000
 ```
+![](https://imgur.com/kzBsbwb.png)
+Exemplo Resultado:
 ![](https://imgur.com/IwhI4ck.png)
 
 
@@ -42,10 +44,11 @@ mpirun -n 4 ./fractalmpi_io 1000
 Compilação e execução para mais de uma máquina (Chococcino)
 ```shell
 gcc -c lib_julia.c
-mpicc lib_julia.o fractalmpiserial.c -o frac -lm
-mpirun -host cm1,cm2,cm3,cm4 -n 4 ./fractalmpiserial 1000
-
+mpicc lib_julia.o fractalmpi_io.c -o fractalmpi_io -lm
+mpirun -host cm1,cm2,cm3,cm4 -n 4 ./fractalmpi_io 1000
 ```
+![](https://imgur.com/EsXAKVN.png)
+Exemplo:
 ![](https://imgur.com/jVTFuuj.png)
 
 
@@ -67,6 +70,8 @@ gcc lib_julia.o fractalomp.c -fopenmp -lm -o fractalomp
 ./fractalomp 1000
 
 ```
+![](https://imgur.com/K0tB7aR.png)
+
 ### Questão 4
 A questão 4 completa está presente no pdf acima com mais detalhes acerca da tabela bem [aqui](./Questão04.pdf)
 | Fractal                       | 100      | 500      | 1000     | 10000   |

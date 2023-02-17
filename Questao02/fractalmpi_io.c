@@ -118,7 +118,7 @@ int main(int argc, char *argv[]) {
     int n;
     int area = 0, largura = 0, altura = 0, local_i = 0;
     FILE *output_file;
-
+    char maquina[200];
     unsigned char *pixel_array, *rgb;
 
     if ((argc <= 1)|(atoi(argv[1])<1)){
@@ -133,6 +133,7 @@ int main(int argc, char *argv[]) {
     MPI_Status status;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &nprocs);
+    gethostname(maquina, 199);
 
     limits(n, nprocs);
 
@@ -185,7 +186,7 @@ int main(int argc, char *argv[]) {
 
     MPI_File_close(&imagem);
 
-    printf("rank[%d]: intervalos: %d %d\n", rank, intervalos[rank][0], intervalos[rank][1]);
+    printf("[maquina=%s] - rank[%d]: intervalos: %d %d\n", maquina, rank, intervalos[rank][0], intervalos[rank][1]);
 
 
     fclose(output_file);

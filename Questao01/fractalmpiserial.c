@@ -7,7 +7,6 @@
 
 
 int intervalos[1000][3]; //nprocs até 1000 basta atualizar
-
 void limits(int v, int n){
     int divisor = v / n;  // divisão inteira
     int resto = v % n;  // resto da divisão
@@ -144,7 +143,8 @@ int main(int argc, char *argv[]) {
     MPI_Status status;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &nprocs);
-
+    char maquina[200];
+    gethostname(maquina, 199);
     limits(n, nprocs);
 
     output_file= fopen(OUTFILE, "wb");
@@ -175,7 +175,7 @@ int main(int argc, char *argv[]) {
     int start_line = intervalos[rank][0];
 
     worker_write_pixel_lines(output_file, largura, altura, start_line, intervalos[rank][1] - intervalos[rank][0], pixel_array);
-    printf("rank[%d]: intervalos: %d %d\n", rank, intervalos[rank][0], intervalos[rank][1]);
+    printf("[maquina=%s] - rank[%d]: intervalos: %d %d\n", maquina, rank, intervalos[rank][0], intervalos[rank][1]);
 
 
     fclose(output_file);

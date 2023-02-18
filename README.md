@@ -1,4 +1,4 @@
-## Trabalho Final PSPD
+## Experimento sobre OpenMP e MPI
 Nome: Bruno Henrique Sousa Duarte
 
 Matrícula: 170138551

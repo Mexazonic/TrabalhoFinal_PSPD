@@ -1,6 +1,6 @@
 ## Questão 05
 
-### Local
+Executar
 ```bash
     make
     make run N=5

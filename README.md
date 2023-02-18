@@ -108,6 +108,7 @@ A questão 4 completa está presente no pdf acima com mais detalhes acerca da ta
 | OpenMP $OMP_NUM_THREADS = 8  | 0.020s   | 0.132s   | 0.239s   | 15.660s |
 | OpenMP $OMP_NUM_THREADS = 4  | 0m0.205s | 0m0.102s | 0m0.232s | 15.213s |
 
+![](https://imgur.com/cxXTHJV.png)
 ### [Questão 5](https://github.com/Mexazonic/TrabalhoFinal_PSPD/blob/main/Questao05/README.md)
 Para mais detalhes, leia [aqui](https://github.com/Mexazonic/TrabalhoFinal_PSPD/blob/main/Questao05/README.md)
 ```shell

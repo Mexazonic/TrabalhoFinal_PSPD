@@ -8,7 +8,7 @@ Para executar localmente
 Já no choccino
 ```shell
     make
-    mpirun -host cm1,cm2,cm3,cm4,gpu1,gpu2,gpu3 -n 7 ./fractalmpiserial 1000
+    mpirun -host cm1,cm2,cm3,cm4,gpu1,gpu2,gpu3 -n 7 ./fractalmpi_io 1000
 ```
 
 Na questão 2 temos um programa em C que usa MPI (Interface de Passagem de Mensagens) para calcular uma imagem da fractal de Julia e salvar a imagem em um arquivo BMP. O código é semelhante ao anterior(Questão 01), mas agora é dividido em intervalos para que vários processos possam calcular pixels diferentes e, em seguida, gravá-los no arquivo BMP usando MPI_File_write_at().

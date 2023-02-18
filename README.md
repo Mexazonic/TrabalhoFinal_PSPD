@@ -8,7 +8,7 @@ Matrícula: 170138551
 Para mais detalhes da questão 1, clique [aqui](https://github.com/Mexazonic/TrabalhoFinal_PSPD/blob/main/Questao01/README.md)
 
 Compilação e execução (Localmente)
-```shell
+```console
 
 gcc -c lib_julia.c
 mpicc lib_julia.o fractalmpiserial.c -o fractalmpiserial -lm
@@ -18,12 +18,18 @@ mpirun -n 8 ./fractalmpiserial 1000
 
 
 Compilação e execução para mais de uma máquina (Chococcino)
-```shell
+```console
 
 gcc -c lib_julia.c
 mpicc lib_julia.o fractalmpiserial.c -o fractalmpiserial -lm
 mpirun -host cm1,cm2,cm3,cm4,gpu1,gpu2,gpu3 -n 7 ./fractalmpiserial 1000
 ```
+ou
+```console
+    make
+    mpirun -host cm1,cm2,cm3,cm4,gpu1,gpu2,gpu3 -n 7 ./fractalmpiserial 1000
+```
+
 ![](https://imgur.com/kzBsbwb.png)
 Exemplo Resultado:
 ![](https://imgur.com/IwhI4ck.png)
@@ -34,7 +40,7 @@ Para mais detalhes da questão 2, clique [aqui](https://github.com/Mexazonic/Tra
 
 
 Compilação e execução (Localmente)
-```shell
+```console
 
 gcc -c lib_julia.c
 mpicc lib_julia.o fractalmpi_io.c -o fractalmpi_io -lm
@@ -44,11 +50,21 @@ mpirun -n 4 ./fractalmpi_io 1000
 
 
 Compilação e execução para mais de uma máquina (Chococcino)
-```shell
+```console
 gcc -c lib_julia.c
 mpicc lib_julia.o fractalmpi_io.c -o fractalmpi_io -lm
 mpirun -host cm1,cm2,cm3,cm4 -n 4 ./fractalmpi_io 1000
 ```
+ou
+
+```console
+    make
+    mpirun -host cm1,cm2,cm3,cm4,gpu1,gpu2,gpu3 -n 7 ./fractalmpi_io 1000
+```
+
+
+
+
 ![](https://imgur.com/JSCxPPe.png)
 Exemplo:
 ![](https://imgur.com/jVTFuuj.png)
@@ -60,18 +76,23 @@ Exemplo:
 Leia mais [aqui](https://github.com/Mexazonic/TrabalhoFinal_PSPD/blob/main/Questao03/README.md)
 
 Setar Número de Threads
-```
+```console
 export OMP_NUM_THREADS=4
 echo $OMP_NUM_THREADS
 
 ```
 
 Compilação e Execução
-```shell
+```console
 gcc -c lib_julia.c
 gcc lib_julia.o fractalomp.c -fopenmp -lm -o fractalomp
 ./fractalomp 1000
+```
+ou
 
+```console
+    make
+    make run V_THREADS=8 N_FRACTAL=1000
 ```
 ![](https://imgur.com/K0tB7aR.png)
 
@@ -92,6 +113,12 @@ Para mais detalhes, leia [aqui](https://github.com/Mexazonic/TrabalhoFinal_PSPD/
 ```shell
 gcc ordena_vetor.c -fopenmp -o sort
 ./sort
+```
+ou
+
+```console
+    make
+    make run N=5
 ```
 ![](https://imgur.com/M9L1jfE.png)
 

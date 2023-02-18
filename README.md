@@ -98,17 +98,19 @@ ou
 
 ### [Questão 4](https://github.com/Mexazonic/TrabalhoFinal_PSPD/blob/main/Questao04/Quest%C3%A3o04.pdf)
 A questão 4 completa está presente no pdf acima com mais detalhes acerca da tabela bem [aqui](https://github.com/Mexazonic/TrabalhoFinal_PSPD/blob/main/Questao04/Quest%C3%A3o04.pdf)
-| Fractal                       | 100      | 500      | 1000     | 10000   |
-| ----------------------------- | -------- | -------- | -------- | ------- |
-| MPI - Questão 1  (-n 4)        | 0.724s   | 0.825s   | 0.962s   | 24.370s |
-| MPI - Questão 2 (-n 4)        | 0.923s   | 0.829s   | 1.076s   | 27.520s |
-| MPI - Questão 1 (-n 7)        | 1.195s   | 1.388s   | 1.421s   | 20.598s |
-| MPI - Questão 2  (-n 7)        | 1.193s   | 1.337s   | 1.531s   | 30.419s |
-| OpenMP $OMP_NUM_THREADS = 16 | 0.016s   | 0m0.157s | 0.249s   | 15.648s |
-| OpenMP $OMP_NUM_THREADS = 8  | 0.020s   | 0.132s   | 0.239s   | 15.660s |
-| OpenMP $OMP_NUM_THREADS = 4  | 0m0.205s | 0m0.102s | 0m0.232s | 15.213s |
+| Fractal                       | 100      | 500      | 1000     | 10000   | 15000 |	18918 |
+| ----------------------------- | -------- | -------- | -------- | ------- | ------- | ------- |
+| MPI - Questão 1  (-n 4)        | 0.724s   | 0.825s   | 0.962s   | 24.370s |55.922s | 1m30.632s|
+| MPI - Questão 2 (-n 4)        | 0.923s   | 0.829s   | 1.076s   | 27.520s | 0m57.021s|1m38.878s|
+| MPI - Questão 1 (-n 7)        | 1.195s   | 1.388s   | 1.421s   | 20.598s |1m0.662s|1m17.485s|
+| MPI - Questão 2  (-n 7)        | 1.193s   | 1.337s   | 1.531s   | 30.419s |1m1.853s|1m43.642s|
+| OpenMP $OMP_NUM_THREADS = 16 | 0.016s   | 0m0.157s | 0.249s   | 15.648s |0m45.942s|1m8.951s|
+| OpenMP $OMP_NUM_THREADS = 8  | 0.020s   | 0.132s   | 0.239s   | 15.660s |0m41.699s|1m0.472s|
+| OpenMP $OMP_NUM_THREADS = 4  | 0m0.205s | 0m0.102s | 0m0.232s | 15.213s |0m41.065s|1m4.008s|
 
-![](https://imgur.com/cxXTHJV.png)
+
+![](https://imgur.com/vTphnCc.png)
+
 ### [Questão 5](https://github.com/Mexazonic/TrabalhoFinal_PSPD/blob/main/Questao05/README.md)
 Para mais detalhes, leia [aqui](https://github.com/Mexazonic/TrabalhoFinal_PSPD/blob/main/Questao05/README.md)
 ```shell

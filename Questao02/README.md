@@ -24,5 +24,6 @@ for (int i = intervalos[rank][0]; i < intervalos[rank][1]; i++): Um loop que ite
 * compute_julia_pixel(): Uma função que calcula a cor de um pixel com base em sua posição na imagem e em alguns parâmetros de entrada. Essa função é definida em um arquivo de biblioteca separado chamado lib_julia.h.
 * MPI_File_write_at(): Uma função MPI que grava o buffer de pixels em um arquivo BMP. Ele grava a partir de um deslocamento específico no arquivo para que cada processo grave na posição correta.
 * MPI_Finalize(): Uma função MPI que finaliza o MPI.
+* MPI_File_write_at vs MPI_File_write (Extra). O MPI_File_write_at é semelhante ao MPI_File_write, mas permite que o processo escreva em um deslocamento específico no arquivo, em vez de começar a escrever no início do arquivo. Isso pode ser útil em situações em que os processos precisam escrever em diferentes locais do arquivo, sem precisar coordenar essas operações.
 
 Em geral, o programa divide o cálculo de pixels em várias partes para que diferentes processos possam trabalhar em diferentes partes da imagem. Cada processo calcula seus pixels e, em seguida, grava-os em um arquivo BMP usando MPI_File_write_at().

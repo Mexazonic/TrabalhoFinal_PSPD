@@ -56,7 +56,7 @@ int main(int argc, char *argv[]) {
 
     MPI_Init(&argc,&argv);
     int rank, nprocs;
-    MPI_Status status;
+    // MPI_Status status;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &nprocs);
     char maquina[200];
@@ -92,7 +92,6 @@ int main(int argc, char *argv[]) {
 
     output_file = fopen(OUTFILE, "r+");
     write_bmp_header(output_file, largura, altura);
-    int line_size = largura * 3;
     int start_line = intervalos[rank][0];
 
     // Abrindo arquivo para poder escrever

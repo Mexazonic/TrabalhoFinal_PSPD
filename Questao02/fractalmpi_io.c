@@ -78,7 +78,7 @@ int main(int argc, char *argv[]) {
     output_file = fopen(OUTFILE, "r+");
     write_bmp_header(output_file, largura, altura);
 
-    int line_size = largura * 3;
+    // int line_size = largura * 3;
     int start_line = intervalos[rank][0];
 
     MPI_File imagem;

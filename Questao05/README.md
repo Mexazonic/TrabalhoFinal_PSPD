@@ -1,6 +1,6 @@
 ## Questão 05
 
-Executar
+Para execução basta digitar
 ```bash
     make
     make run N=5

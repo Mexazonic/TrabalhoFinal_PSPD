@@ -18,7 +18,7 @@ O laço externo percorre o array da última posição até a segunda posição, 
 
 O OpenMP é usado para paralelizar a busca do valor máximo na sub-sequência [0, i-1]. Temos que #pragma omp parallel for é usada para distribuir as iterações do laço interno entre vários threads. A cláusula reduction é usada para encontrar o máximo valor na sub-sequência de cada thread e, em seguida, combinar os resultados finais em um único valor máximo. A estrutura Compare é usada para armazenar o valor máximo e seu índice.
 
-No geral, este algoritmo tem complexidade O(n^2) no pior caso, onde n é o tamanho do array de entrada. É importante notar que o uso do OpenMP pode melhorar o desempenho do algoritmo em sistemas com múltiplos núcleos de processamento.
+No geral, este algoritmo tem complexidade O(n^2) no pior caso, onde n é o tamanho do array de entrada. É importante notar que o uso do OpenMP pode melhorar o desempenho do algoritmo em sistemas com múltiplos núcleos de processamento. O código foi recomendado e idealizdo em um site como exemplo de implementação de selection sort paralelo utilizando OpenMP [aqui](https://stackoverflow.com/questions/34752333/parallelize-selection-sort-using-openmp).
 
 
 

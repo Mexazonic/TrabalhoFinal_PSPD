@@ -8,8 +8,19 @@ Para execução basta digitar
 ```
 Este é um programa em linguagem C que realiza a ordenação de um vetor de inteiros usando o algoritmo selection sort e o algoritmo qsort da biblioteca padrão da linguagem.
 
-Primeiro ocorre a inclusão das bibliotecas stdio.h, stdlib.h, string.h, time.h e omp.h. A Declaração da função selection_sort, que recebe um ponteiro para um vetor de inteiros e o número de elementos do vetor, e realiza a ordenação do vetor usando o algoritmo selection sort e de semlhante forma a declaração da função ompsort, que recebe um ponteiro para um vetor de inteiros, um ponteiro para um vetor de saída e o número de elementos do vetor, e realiza a ordenação do vetor usando o algoritmo selection sort em paralelo usando OpenMP.
-Aloca memória para os vetores de entrada (vector) e de saída (out), ambos com tamanho n e a loca memória para um vetor de teste (test) com tamanho n.
-Preenche o vetor vector com números inteiros aleatórios usando a função rand(). Copia o conteúdo do vetor vector para o vetor test.
-Chama a função qsort para ordenar o vetor test em ordem crescente e mede o tempo de execução. Chama a função ompsort para ordenar o vetor vector em ordem crescente usando OpenMP e mede o tempo de execução. Exibe os primeiros 20 elementos do vetor test e do vetor out para verificar se a ordenação foi feita corretamentee compara o conteúdo dos vetores test e out para verificar se a ordenação foi feita corretamente.
-Exibe uma mensagem indicando se a ordenação foi feita corretamente e os tempos de execução do qsort e do ompsort, e por fim, libera a memória alocada para os vetores.
+Este código implementa o selection sort, que ordena um array de inteiros em ordem decrescente. Ele também usa OpenMP para paralelizar o processo de encontrar o máximo valor em uma sub-sequência do array.
+
+O algoritmo funciona da seguinte forma:
+
+Para cada posição i do array de entrada, encontra-se o valor máximo na sub-sequência do array [0, i-1].
+Em seguida, troca-se o valor na posição i com o valor máximo encontrado na sub-sequência [0, i-1].
+O laço externo percorre o array da última posição até a segunda posição, enquanto o laço interno encontra o valor máximo na sub-sequência [0, i-1] para cada posição i do array.
+
+O OpenMP é usado para paralelizar a busca do valor máximo na sub-sequência [0, i-1]. Temos que #pragma omp parallel for é usada para distribuir as iterações do laço interno entre vários threads. A cláusula reduction é usada para encontrar o máximo valor na sub-sequência de cada thread e, em seguida, combinar os resultados finais em um único valor máximo. A estrutura Compare é usada para armazenar o valor máximo e seu índice.
+
+No geral, este algoritmo tem complexidade O(n^2) no pior caso, onde n é o tamanho do array de entrada. É importante notar que o uso do OpenMP pode melhorar o desempenho do algoritmo em sistemas com múltiplos núcleos de processamento.
+
+
+
+
+

@@ -3,7 +3,7 @@
 Para execução basta digitar
 ```bash
     make
-    make run N=5
+    make run N=20
 
 ```
 Este é um programa em linguagem C que realiza a ordenação de um vetor de inteiros usando o algoritmo selection sort e o algoritmo qsort da biblioteca padrão da linguagem.

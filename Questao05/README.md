@@ -7,7 +7,6 @@ Para execução basta digitar
 
 ```
 Este é um programa em linguagem C que realiza a ordenação de um vetor de inteiros usando o algoritmo selection sort e o algoritmo qsort da biblioteca padrão da linguagem.
-
 Este código implementa o selection sort, que ordena um array de inteiros em ordem decrescente. Ele também usa OpenMP para paralelizar o processo de encontrar o máximo valor em uma sub-sequência do array.
 
 O algoritmo funciona da seguinte forma:
